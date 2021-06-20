@@ -1,9 +1,11 @@
 from django.db import models
 from store.models import Product, Variation
+from src.validators import bleach_validator
+
 # Create your models here.
 
 class Cart(models.Model):
-    cart_id = models.CharField(max_length=250,blank=True)
+    cart_id = models.CharField(max_length=250,blank=True,validators=[bleach_validator])
     date_added = models.DateField(auto_now_add=True)
 
     def __str__(self):

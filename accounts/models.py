@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser,AbstractBaseUser,BaseUserManager
+from src.validators import bleach_validator,email_validator
 # Create your models here.
 
 class MyAccountManager(BaseUserManager):
@@ -37,11 +38,11 @@ class MyAccountManager(BaseUserManager):
 
 
 class Account(AbstractBaseUser):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    username = models.CharField(max_length=50,unique=True)
-    email = models.EmailField(max_length=200,unique=True)
-    phone_number= models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50,validators=[bleach_validator])
+    last_name = models.CharField(max_length=50,validators=[bleach_validator])
+    username = models.CharField(max_length=50,unique=True,validators=[bleach_validator])
+    email = models.EmailField(max_length=200,unique=True,validators=[email_validator])
+    phone_number= models.CharField(max_length=50,validators=[bleach_validator])
     
     # requird fields
     date_joined = models.DateTimeField(auto_now_add=True)
