@@ -1,16 +1,14 @@
 from django.db import models
 from category.models import Category
 from django.urls import reverse
-from src.validators import bleach_validator
+from src.validators import bleach_validator,upload_image_path
 # Create your models here.
-
-
 class Product(models.Model):
     product_name = models.CharField(max_length=200,unique=True,validators=[bleach_validator])
     slug = models.SlugField(max_length=200,unique=True)
     description = models.TextField(max_length=200,blank=True)
     price = models.IntegerField()
-    image = models.ImageField(upload_to='photos/products')
+    image = models.ImageField(upload_to=upload_image_path)
     stock = models.IntegerField()
     is_available = models.BooleanField(default=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)

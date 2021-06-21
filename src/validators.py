@@ -5,6 +5,8 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext as _
+import random
+import os
 
 def bleach_validator(text):
     cleaned_text = bleach.clean(text, strip=True, strip_comments=True, tags=[], attributes=[], styles=[])
@@ -58,3 +60,30 @@ class CustomPasswordValidator():
 
     def get_help_text(self):
         return ""
+
+def get_filename_ext(filepath):
+    base_name = os.path.basename(filepath)
+    name, ext = os.path.splitext(base_name)
+    return name, ext
+
+def upload_image_path(instance, filename):
+    # print(instance)
+    #print(filename)
+    new_filename = random.randint(1,3910209312)
+    name, ext = get_filename_ext(filename)
+    final_filename = '{new_filename}{ext}'.format(new_filename=new_filename, ext=ext)
+    return "products/{new_filename}/{final_filename}".format(
+            new_filename=new_filename, 
+            final_filename=final_filename
+            )
+
+def category_upload_image_path(instance, filename):
+    # print(instance)
+    #print(filename)
+    new_filename = random.randint(1,3910209312)
+    name, ext = get_filename_ext(filename)
+    final_filename = '{new_filename}{ext}'.format(new_filename=new_filename, ext=ext)
+    return "category/{new_filename}/{final_filename}".format(
+            new_filename=new_filename, 
+            final_filename=final_filename
+            )
