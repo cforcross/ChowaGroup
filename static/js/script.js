@@ -57,4 +57,7 @@ $(document).ready(function() {
     
 }); 
 // jquery end
-
+// pop up message to automatically dissapears
+setTimeout(function(){
+    $('#message').fadeOut('slow')
+  }, 4000)
