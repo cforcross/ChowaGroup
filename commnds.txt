@@ -1,2 +1,7 @@
 Documentation purposes only
-hello world
+#for Coverage steps only
+coverage run manage.py test
+coverage report 
+coverage html
+coverage run --omit='*/venv/' manage.py test
+coverage html
