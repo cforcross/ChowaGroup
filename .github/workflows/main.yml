@@ -48,4 +48,4 @@ jobs:
         DB_ENGINE: ${{secrets.DB_ENGINE}}
 
       run: |
-        python manage.py test
+        coverage run manage.py test && coverage report --fail-under=50 && coverage xml
