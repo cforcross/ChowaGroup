@@ -3,6 +3,8 @@ from django.contrib import messages
 from .forms import RegisterForm
 from .models import Account
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
+from django.core.mail import EmailMessage
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -19,6 +21,18 @@ def register(request):
             username=username,password=password)
             user.phone_number=phone_number
             user.save()
+
+            current_site = get_current_site(request)
+            mail_subject ='please click link to register'
+            message = render_to_string('accounts/account_verification_email.html',{
+                'user': user,
+                'domain': current_site,
+                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+                'token':default_token_generator.make_token(user)
+            })
+            to_email =email,
+            send_email =EmailMessage(mail_subject,message,to=[to_email])
+            send_email.send()
             messages.success(request, 'Your profile was created.')
             return redirect ('register')
     else:   
@@ -37,13 +51,15 @@ def login(request):
         if user is not None:
             auth.login(request,user)
 
-            redirect('home')
+            return redirect('home')
         else:
             messages.error(request,'Invalid credentials')
             return redirect('login')
         
     return render(request,'accounts/login.html')
 
+@login_required(login_url='login')
 def logout(request):
-    #testing
-    return render(request,'accounts/logout.html')
+    auth.logout(request)
+    messages.success(request,'you are logged out')
+    return redirect('login')
