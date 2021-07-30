@@ -1,1 +1,1 @@
-***For Future use
+[![Django Tests](https://github.com/cforcross/ChowaGroup/actions/workflows/main.yml/badge.svg)](https://github.com/cforcross/ChowaGroup/actions/workflows/main.yml) [![codecov](https://codecov.io/gh/cforcross/ChowaGroup/branch/main/graph/badge.svg?token=K8KDJS195E)](https://codecov.io/gh/cforcross/ChowaGroup)
