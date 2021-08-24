@@ -5,3 +5,5 @@ coverage report
 coverage html
 coverage run --omit='*/venv/' manage.py test
 coverage html
+
+#setting up development
