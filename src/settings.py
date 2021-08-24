@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+import colorama
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -88,26 +89,7 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'ecom',
-#         'USER': 'django_dev',
-#         'PASSWORD': '7204$BGM$AGUK',
-#         'HOST': 'localhost',
-#         'PORT':'5432'
-#     }
-# }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': config('DB_NAME'),
-#         'USER': config('DB_USER'),
-#         "PASSWORD": config('DB_PASSWORD'),
-#         "HOST": config('DB_HOST'),
-#         "PORT": config('DB_PORT')
-#     }
-# }
+
 DATABASES = {
     'default': {
         'ENGINE': config("DB_ENGINE"),
@@ -174,3 +156,10 @@ MESSAGE_TAGS = {
 }
 
 LOGIN_REDIRECT_URL = 'home'
+
+#colorama for coloring django logs windows OS
+os.environ['ANSICON'] = 'on'
+colorama.init()
+
+# redgreenunittest for coloring unittest test logs
+TEST_RUNNER = "redgreenunittest.django.runner.RedGreenDiscoverRunner"
