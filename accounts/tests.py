@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from .forms import RegisterForm
+from .forms import RegistrationForm
 
 class UsersManagersTests(TestCase):
 
@@ -25,7 +25,7 @@ class UsersManagersTests(TestCase):
 class UserRegistrationTest(TestCase):
 
     def test_register_user(self):
-        form = RegisterForm(data={
+        form = RegistrationForm(data={
             "first_name": "chowa",
             "last_name": "cross",
             "phone_number": "78562216365",
