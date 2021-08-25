@@ -7,3 +7,6 @@ coverage run --omit='*/venv/' manage.py test
 coverage html
 
 #setting up development
+
+git remote rm origin
+git remote add origin
