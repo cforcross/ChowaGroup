@@ -6,6 +6,9 @@ coverage html
 coverage run --omit='*/venv/' manage.py test
 coverage html
 
+# general
+coverage run manage.py test && coverage report && coverage html
+
 #setting up development
 
 git remote rm origin
