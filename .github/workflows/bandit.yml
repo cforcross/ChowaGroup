@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main #dev, release, etc.
+      - dev
   release:
     types:
       - created
@@ -30,6 +31,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: ${{ RUNNER.temp }}/_github_home/bandit_report.out
-    - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}" 
+  
