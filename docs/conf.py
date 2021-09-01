@@ -13,6 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+
 import os
 import sys
 # import Django
@@ -23,6 +24,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'src.settings'
 # print(sys.path.insert(0, os.path.abspath('..')))
 # directory_path = os.path.dirname(os.path.abspath(__file__)) 
 # print(directory_path)
+print(sys.path.insert(0, os.path.abspath('.')))
 # -- Project information -----------------------------------------------------
 
 project = 'ecommerce'
