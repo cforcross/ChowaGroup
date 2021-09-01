@@ -19,4 +19,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-modules/all-about-me.rst
+docs2/all-about-me.rst
