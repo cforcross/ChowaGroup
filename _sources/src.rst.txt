@@ -1,0 +1,61 @@
+src package
+===========
+
+Submodules
+----------
+
+src.asgi module
+---------------
+
+.. automodule:: src.asgi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.settings module
+-------------------
+
+.. automodule:: src.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.urls module
+---------------
+
+.. automodule:: src.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.validators module
+---------------------
+
+.. automodule:: src.validators
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.views module
+----------------
+
+.. automodule:: src.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.wsgi module
+---------------
+
+.. automodule:: src.wsgi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: src
+   :members:
+   :undoc-members:
+   :show-inheritance:

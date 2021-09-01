@@ -1,14 +1,14 @@
-.. No Errors Test Project documentation master file, created by
-   sphinx-quickstart on Fri Aug 30 17:07:56 2019.
+.. ecommerce documentation master file, created by
+   sphinx-quickstart on Wed Sep  1 08:30:39 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to No Errors Test Project's documentation!
-==================================================
+Welcome to ecommerce's documentation!
+=====================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Hello World!
+   :caption: Contents:
 
 
 
@@ -18,3 +18,5 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+docs2/all-about-me.rst
