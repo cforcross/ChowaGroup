@@ -15,10 +15,10 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import os
 import sys
-import django
+import Django
 sys.path.insert(0, os.path.abspath('..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'src.settings'
-django.setup()
+Django.setup()
 # print('hello world')
 # print(sys.path.insert(0, os.path.abspath('..')))
 # directory_path = os.path.dirname(os.path.abspath(__file__)) 
