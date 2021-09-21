@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ecommerce-env.eba-kfrbp6fk.us-west-2.elasticbeanstalk.com']
 
 # https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html ⭐⭐⭐
 

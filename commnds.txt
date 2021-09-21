@@ -13,3 +13,9 @@ coverage run manage.py test && coverage report && coverage html
 
 git remote rm origin
 git remote add origin
+
+
+The key fingerprint is:
+SHA256:CxDF+TdZROP/DQIbTr8II/bR2iwub5FAarCIRP5J7eQ aws-eb
+
+CNAME: ecommerce-env.eba-kfrbp6fk.us-west-2.elasticbeanstalk.com
